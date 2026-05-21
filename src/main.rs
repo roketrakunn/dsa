@@ -1,9 +1,10 @@
+use std::vec;
+
 mod sorting;
 mod searching;
 fn main() {
 
     let mut arr = vec![5,3,8,1]; 
-    
     sorting::bubble_sort(&mut arr);
     println!("{:?}", arr);
 
@@ -19,4 +20,11 @@ fn main() {
         Some(index) => println!("found at:  {}",index),
         None => println!("not found"),
     }
+
+
+
+    //test merge sort
+    let mut arr_to_merge = vec![5,4,3,2,1]; 
+    let sorted_by_merge = sorting::merge_sort(&mut arr_to_merge); 
+    println!("merge sort results {:?}", sorted_by_merge);
 }
