@@ -27,4 +27,11 @@ fn main() {
     let mut arr_to_merge = vec![5,4,3,2,1]; 
     let sorted_by_merge = sorting::merge_sort(&mut arr_to_merge); 
     println!("merge sort results {:?}", sorted_by_merge);
+
+    //test quick sort
+    let mut arr_quick = vec![5,3,4,2,1];
+    let n = arr_quick.len();
+    sorting::quick_sort(&mut arr_quick, 0, n - 1);
+    println!("quick sort results {:?}", arr_quick);
+
 }

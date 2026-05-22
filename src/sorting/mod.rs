@@ -55,3 +55,33 @@ pub fn merge(left: &[i32], right : &[i32]) -> Vec<i32> {
     res
 }
 
+pub fn quick_sort(arr: &mut [i32], low: usize , high: usize) {
+
+    if low >= high  { 
+        return;
+    }
+
+    let pivot = partition(arr, low, high);
+
+    if pivot > 0 { 
+        quick_sort(arr, low, pivot -1);
+    }
+    quick_sort(arr, pivot+1, high);
+
+}
+
+fn partition(arr: &mut [i32], low: usize, high: usize) -> usize {
+    let pivot = arr[high];
+    let mut boundary = low;
+
+    for scanner in low..high {
+        if arr[scanner] < pivot {
+            arr.swap(boundary, scanner);
+            boundary += 1;
+        }
+    }
+    arr.swap(boundary, high);
+    boundary
+}
+
+
